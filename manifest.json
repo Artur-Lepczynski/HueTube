@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "HueTube",
+  "version": "1.0",
+  "description": "Customize Your YouTube Experience with Color!",
+  "icons": {
+    "32": "icons/logo-32.png", 
+    "192": "icons/logo-192.png"
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://www.youtube.com/"],
+      "js": ["ytBar.js"]
+    }
+  ]
+}

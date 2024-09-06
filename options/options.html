@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link href="./style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <script src="options.js" defer></script>
+
+  <p class="title">Options</p>
+  <div class="options-wrapper">
+
+    <div class="option">
+      <label for="gd1-color" class="option-label">Left gradient color:</label>
+      <input type="color" id="gd1-color" class="color-input" name="gradientColor1" />
+    </div>
+
+    <div class="option">
+      <label for="gd2-color" class="option-label">Right gradient color:</label>
+      <input type="color" id="gd2-color" class="color-input" name="gradientColor2" />
+    </div>
+
+    <div class="option">
+      <label for="logo1-color" class="option-label">Main logo color:</label>
+      <input type="color" id="logo1-color" class="color-input" name="logoBgColor" />
+    </div>
+
+    <div class="option">
+      <label for="logo2-color" class="option-label">Secondary logo color:</label>
+      <input type="color" id="logo2-color" class="color-input" name="logoTriangleColor" />
+    </div>
+
+    <div class="option">
+      <label for="gradient-percent" class="option-label percent-label">Gradient %:</label>
+      <input type="range" min="0" max="100" id="gradient-percent" name="gradient-percent" />
+    </div>
+
+    <div class="option">
+      <label for="gradient-step" class="option-label step-label">Step %:</label>
+      <input type="range" min="0" max="100" id="gradient-step" name="gradient-step" />
+    </div>
+
+  </div>
+  <button id="reset-button">Reset to default</button>
+  <p class="footer-text">Made by 👱🏻‍♂️👩🏻 on 🌍</p>
+</body>
+
+</html>
