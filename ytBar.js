@@ -18,6 +18,7 @@ getSettings().then(() => {
 listenForColorChanges();
 
 function listenForColorChanges() {
+  console.log("TEST")
   browser.storage.onChanged.addListener((changes) => {
     const names = Object.keys(changes);
     for (const name of names) {
@@ -65,7 +66,7 @@ function getGradient(gradientColor1, gradientColor2, gradientPercent) {
 
 function stylePlayerBar() {
   const style = document.createElement("style");
-  style.innerHTML = `
+  style.textContent = `
     .ytp-scrubber-button {
       background: ${settings.gradientColor2} !important;
       }
@@ -79,9 +80,10 @@ function stylePlayerBar() {
     `;
   document.head.append(style);
 }
+
 function styleThumbnailBars() {
   const style = document.createElement("style");
-  style.innerHTML = `
+  style.textContent = `
     .ytd-thumbnail-overlay-resume-playback-renderer {
       background: ${getGradient(
         settings.gradientColor1,
@@ -93,10 +95,15 @@ function styleThumbnailBars() {
   document.head.append(style);
 }
 
+//old: YtProgressBarLineProgressBarPlayed
+// YtProgressBarPlayheadProgressBarPlayheadDot
+
+//ytProgressBarLineProgressBarPlayedRefresh
+//ytProgressBarPlayheadProgressBarPlayheadDot
 function styleHomepageHoverThumbnailBar() {
   const style = document.createElement("style");
-  style.innerHTML = `
-    .YtProgressBarLineProgressBarPlayed {
+  style.textContent = `
+  .YtProgressBarLineProgressBarPlayed {
       background: ${getGradient(
         settings.gradientColor1,
         settings.gradientColor2,
@@ -106,13 +113,23 @@ function styleHomepageHoverThumbnailBar() {
     .YtProgressBarPlayheadProgressBarPlayheadDot {
       background: ${settings.gradientColor2} !important;
     }
+    .ytProgressBarLineProgressBarPlayedRefresh {
+      background: ${getGradient(
+        settings.gradientColor1,
+        settings.gradientColor2,
+        settings.gradientPercent
+      )}
+    }
+    .ytProgressBarPlayheadProgressBarPlayheadDot {
+      background: ${settings.gradientColor2} !important;
+    }
   `;
   document.head.append(style);
 }
 
 function styleProgressBar() {
   const style = document.createElement("style");
-  style.innerHTML = `
+  style.textContent = `
     .yt-page-navigation-progress {
       background: ${getGradient(
         settings.gradientColor1,
