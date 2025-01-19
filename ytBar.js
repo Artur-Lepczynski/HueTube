@@ -18,7 +18,6 @@ getSettings().then(() => {
 listenForColorChanges();
 
 function listenForColorChanges() {
-  console.log("TEST")
   browser.storage.onChanged.addListener((changes) => {
     const names = Object.keys(changes);
     for (const name of names) {
